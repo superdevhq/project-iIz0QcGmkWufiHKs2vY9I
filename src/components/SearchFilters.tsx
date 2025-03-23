@@ -69,7 +69,7 @@ const SearchFilters = ({ onFilterChange, initialFilters = {} }: SearchFiltersPro
               <SelectValue placeholder="Location" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Locations</SelectItem>
+              <SelectItem value="all-locations">All Locations</SelectItem>
               {locations.map((loc) => (
                 <SelectItem key={loc} value={loc}>
                   {loc}
@@ -87,7 +87,7 @@ const SearchFilters = ({ onFilterChange, initialFilters = {} }: SearchFiltersPro
               <SelectValue placeholder="Job Type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Types</SelectItem>
+              <SelectItem value="all-types">All Types</SelectItem>
               {jobTypes.map((jobType) => (
                 <SelectItem key={jobType} value={jobType}>
                   {jobType}

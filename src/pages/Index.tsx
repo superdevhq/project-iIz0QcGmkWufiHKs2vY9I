@@ -29,15 +29,15 @@ const Index = () => {
     // Update URL params
     const newParams = new URLSearchParams();
     if (filters.search) newParams.set('search', filters.search);
-    if (filters.location) newParams.set('location', filters.location);
-    if (filters.type) newParams.set('type', filters.type);
+    if (filters.location && filters.location !== 'all-locations') newParams.set('location', filters.location);
+    if (filters.type && filters.type !== 'all-types') newParams.set('type', filters.type);
     setSearchParams(newParams);
     
     // Filter jobs
     const jobs = filterJobs({
       search: filters.search,
-      location: filters.location || undefined,
-      type: filters.type || undefined,
+      location: filters.location === 'all-locations' ? undefined : filters.location || undefined,
+      type: filters.type === 'all-types' ? undefined : filters.type || undefined,
     });
     
     setFilteredJobs(jobs);
